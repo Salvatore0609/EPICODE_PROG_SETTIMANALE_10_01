@@ -23,15 +23,39 @@ body {
     font-size: 14px;
 }
 
+button {
+    border-radius: 50px;
+    border: none;
+    background-color: #191919;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 hr {
     margin: 0;
 }
 
 header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: 1rem 0;
     background-color: #ffc117;
+    border-bottom: 1px solid black;
+    transition: background-color 0.5s;
+}
+
+header a {
+    color: black;
+}
+
+header button {
+    padding: 0.5em 2em;
 }
 
 header .flex-container {
@@ -45,6 +69,48 @@ article {
     padding: 2em 0;
 }
 
+.banner {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #ffc117;
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+.banner div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.banner h1 {
+    font-family: "Spectral";
+    font-size: 8em;
+    line-height: 1.5em;
+}
+
+.banner p {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin-bottom: 2em;
+}
+
+.banner button {
+    padding: 0.5em 2em;
+    font-size: 1.2em
+}
+
+.banner img {
+    position: absolute;
+    top: 2em;
+    right: 0;
+}
+
+
+
 .flex-container {
     /* Rivedere con media query */
     max-width: 1152px;
@@ -55,8 +121,6 @@ article {
     /* flex-basis: 80%; */
     /* background-color: rgb(3, 244, 236); */
 }
-
-
 
 .flex-container nav {
     display: flex;
@@ -105,7 +169,7 @@ nav a {
 
 .articles-preview__item {
     display: flex;
-    flex: 0 1 24em;
+    flex: 0 1 19em;
     flex-direction: row;
 
     /* background-color: blueviolet; */
@@ -167,15 +231,17 @@ nav a {
 
 .articles__item {
     /* per disporre i contenitore contenuto e img in row */
+    width: 100%;
     display: flex;
+
 }
 
-.articles__item>div {
+.articles__item > div {
     flex: 1;
     /* flex-grow: 1; flex-shrink: 1; flex-basis: 1; */
 }
 
-.articles__item>img {
+.articles__item > img {
     width: 200px;
     margin-left: 1em;
     aspect-ratio: 16/9;
@@ -231,6 +297,91 @@ nav a {
     color: #757575;
 }
 
-section button {
-    
+.topics div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    border-bottom: 1px solid #e6e7e7 ;
+    padding: 1em 0 2em;
+}
+
+.topics p {
+    font-weight: 800;
+    color: #191919;
+    margin-bottom: 0.5em;
+}
+
+.topics button {
+    background-color: white;
+    color: #757575;
+    border: 1px solid #e6e7e7;
+    border-radius: 3px;
+    padding: 1em;
+    line-height: 0;
+}
+
+.topics ul {
+    color:#757575;
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1025px) {
+    .articles {
+        margin-right: 0;
+    }
+
+    .banner{
+        padding-top: 8em;
+    } 
+
+    .banner img {
+        right: -20em;
+    }
+
+    .banner h1 {
+        font-size: 4.8em;
+    }
+
+    .page-content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2em
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .articles__item__info {
+        font-size: 12px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    .articles__item > img {
+        height: 100px;
+        margin-left: 1em;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .flex-container {
+        width: 90%;
+    }
+
+    nav ul li:not(:last-child){
+        display: none;
+    }
+
+    .banner img {
+        display: none;
+    }
+
+
+    .banner{
+        padding-top: 8em;
+    } 
+
 }
