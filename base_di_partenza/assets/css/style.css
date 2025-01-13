@@ -336,7 +336,7 @@ nav a {
         padding-top: 8em;
     } 
 
-    .banner img {
+    .banner object {
         right: -20em;
     }
 
@@ -375,7 +375,7 @@ nav a {
         display: none;
     }
 
-    .banner img {
+    .banner object {
         display: none;
     }
 
