@@ -103,7 +103,7 @@ article {
     font-size: 1.2em
 }
 
-.banner img {
+.banner object {
     position: absolute;
     top: 2em;
     right: 0;
